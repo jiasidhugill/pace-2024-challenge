@@ -58,6 +58,7 @@ def chlorophyll():
 
     s3_link = 's3://ob-cumulus-prod-public/PACE_OCI.20241005T203837.L2.OC_BGC.V2_0.NRT.nc'
     new_edpt = 'ob-cumulus-prod-public.s3-us-west-2.amazonaws.com'
+    # response = requests.get(new_edpt)
     # ds = xr.open_dataset(new_edpt)
     # hls_da = rioxarray.open_rasterio(s3_link, chunks=True)
     # print(ds.values())

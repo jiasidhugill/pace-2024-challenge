@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     const fetchImage = async () => {
-      const response = await fetch('pace');
+      const response = await fetch('/pace');
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       console.log(url);

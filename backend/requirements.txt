@@ -2,3 +2,11 @@
 flask==3.0.1
 gunicorn==21.2.0
 netCDF4==1.7.1.post2
+boto3==1.35.34
+python-dotenv==1.0.1
+xarray==2024.9.0
+rasterio==1.4.1
+rioxarray==0.17.0
+geoviews==1.13.0
+hvplot==0.11.0
+holoviews==1.19.1

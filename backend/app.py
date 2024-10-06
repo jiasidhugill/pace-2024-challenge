@@ -39,8 +39,58 @@ def hello_world():
 def get_temp_creds(s3_cred_endpoint):
     return requests.get(s3_cred_endpoint).json()
 
+@app.route('/pacedata')
+def pacedata(): 
+    file_path = request.args.get('filepath', '')
+    if (file_path == ''): 
+        return 'no filepath'
+    dataset = Dataset(file_path, 'r')
+
+    # Access the observation_data and geolocation_data groups
+    observation_data_group = dataset.groups['observation_data']
+    geolocation_data_group = dataset.groups['geolocation_data']
+
+    # Extract variables
+    dolp = observation_data_group.variables['dolp'][:]  # Degree of Linear Polarization
+    latitudes = geolocation_data_group.variables['latitude'][:]
+    longitudes = geolocation_data_group.variables['longitude'][:]
+
+    # Average over the views dimension
+    dolp_mean = np.nanmean(dolp, axis=2)  # Shape (396, 519)
+
+    # Flatten the latitudes and longitudes
+    latitudes_mean = latitudes.flatten()
+    longitudes_mean = longitudes.flatten()
+    dolp_mean_flat = dolp_mean.flatten()
+
+    # Create a scatter plot for DOLP using latitude and longitude
+    plt.figure(figsize=(10, 6))
+    scatter = plt.scatter(longitudes_mean, latitudes_mean, c=dolp_mean_flat, cmap='viridis', marker='o', alpha=0.7)
+    plt.colorbar(scatter, label='Degree of Linear Polarization (DOLP)')
+    plt.title('A closer look at light polarization of your ocean')
+    plt.xlabel('Longitude')
+    plt.ylabel('Latitude')
+    plt.grid(True)
+    img = io.BytesIO()
+    plt.savefig(img, format='png')
+    plt.close()  # Close the figure to avoid display issues
+    img.seek(0)  # Rewind the buffer
+
+    # Return the image as a response
+    return Response(img.getvalue(), mimetype='image/png')
+
 @app.route('/chlorophyll')
 def chlorophyll():
+<<<<<<< HEAD
+    params = {
+        "results_as_file": 1,
+        "sensor_id": 42,
+        "backdays": 1,
+        "subType": 1
+    }
+    response = requests.post("https://oceandata.sci.gsfc.nasa.gov/api/file_search", data=params)
+    print(response)
+=======
     creds = get_temp_creds('https://data.lpdaac.earthdatacloud.nasa.gov/s3credentials')
     session = boto3.Session(
         aws_access_key_id=creds['accessKeyId'], 
@@ -57,9 +107,26 @@ def chlorophyll():
     rio_env.__enter__()
 
     s3_link = 's3://ob-cumulus-prod-public/PACE_OCI.20241005T203837.L2.OC_BGC.V2_0.NRT.nc'
-    new_edpt = 'ob-cumulus-prod-public.s3-us-west-2.amazonaws.com'
+    # hls_da = rioxarray.open_rasterio(s3_link, chuncks=True)
+    # hls_da = hls_da.squeeze('band', drop=True)
+    # hls_da.hvplot.image(x='x', y='y', cmap='fire', rasterize=True, width=800, height=600, colorbar=True)    # colormaps -> https://holoviews.org/user_guide/Colormaps.html
+
+    #'s3://ob-cumulus-prod-public/PACE_OCI.20241005T203837.L2.OC_BGC.V2_0.NRT.nc'
+    # new_edpt = 'ob-cumulus-prod-public.s3-us-west-2.amazonaws.com'
+    # Create an S3 resource from the session
+    # s3 = session.resource('s3')
+
+    # # Access the bucket
+    # bucket = s3.Bucket('ob-cumulus-prod-public')
+    # List objects in the bucket
+    # print(bucket.objects.all())
+    # for obj in bucket.objects.all():
+    #     print(obj.key)
     # response = requests.get(new_edpt)
-    # ds = xr.open_dataset(new_edpt)
+    try: 
+        hls_da = rioxarray.open_rasterio(s3_link, chuncks=True)
+    except Exception as e: 
+        print(e)
     # hls_da = rioxarray.open_rasterio(s3_link, chunks=True)
     # print(ds.values())
     
@@ -75,6 +142,7 @@ def chlorophyll():
     # Return the image as a response
     # return Response(img.getvalue(), mimetype='image/png')
 
+>>>>>>> dcfa22a (added pacedata function for sonika's file access)
     return {
         'statusCode': 200,
     }

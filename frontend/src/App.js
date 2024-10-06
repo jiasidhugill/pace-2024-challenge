@@ -7,7 +7,8 @@ function App() {
 
   useEffect(() => {
     const fetchImage = async () => {
-      const response = await fetch('/pacedata?filepath=PACE_HARP2.20241005T122212.L1C.V2.5km.nc');
+      // const response = await fetch('/pacedata?filepath=PACE_HARP2.20241005T122212.L1C.V2.5km.nc')
+      const response = await fetch('getfile?backdays=1&dtid=rrs')
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
       console.log(url);

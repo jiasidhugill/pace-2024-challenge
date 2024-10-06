@@ -1,0 +1,135 @@
+.ozone-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height to cover the viewport */
+    background-image: url('./assets/atm_bg.png'); /* Set atmosphere background */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align items at the start vertically */
+    padding-top: 20px; /* Add some padding to the top */
+    color: white;
+}
+
+.title {
+    margin-bottom: 10px; /* Adjust as needed to move the title closer to the top */
+    font-size: 2rem; /* Change size if necessary */
+}
+
+.next-button {
+    margin-top: 10px; /* Adjust as needed to move the button closer to the title */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.ozone1 {
+    position: fixed;
+    top: 50vh;
+    left: 20vw;
+    transition: transform 6s ease-in-out; /* Adjusted for faster movement */
+    animation: fadeOut 2s forwards;
+}
+.ozone2 {
+    position: fixed;
+    top: 75vh;
+    left: 35vw;
+    transition: transform 6s ease-in-out; /* Adjusted for faster movement */
+    animation: fadeOut 2s forwards;
+}
+.ozone3 {
+    position: fixed;
+    top: 70vh;
+    left: 50vw;
+    transition: transform 6s ease-in-out; /* Adjusted for faster movement */
+    animation: fadeOut 2s forwards;
+}
+.ozone4 {
+    position: fixed;
+    top: 50vh;
+    left: 70vw;
+    transition: transform 6s ease-in-out; /* Adjusted for faster movement */
+    animation: fadeOut 2s forwards;
+}
+
+.cfc1 {
+    position: fixed;
+    top: 55vh;
+    left: 30vw;
+    animation: rotate1 5s infinite;
+}
+
+.cfc2 {
+    position: fixed;
+    top: 58vh;
+    left: 58vw;
+    animation: rotate2 5s infinite;
+}
+
+.uv1 {
+    position: fixed;
+    top: 55vh;
+    left: 20vw;
+    animation: fallToEarth 5s;
+}
+.uv2 {
+    position: fixed;
+    top: 65vh;
+    left: 40vw;
+    animation: fallToEarth 5s;
+}
+.uv3 {
+    position: fixed;
+    top: 60vh;
+    left: 65vw;
+    animation: fallToEarth 5s;
+}
+.uv4 {
+    position: fixed;
+    top: 75vh;
+    left: 78vw;
+    animation: fallToEarth 5s;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start as invisible */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* rotation */
+@keyframes rotate2 {
+    50% {transform: rotate(360deg);}
+}
+
+@keyframes rotate1 {
+    50% {transform: rotate(-360deg);}
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Start as visible */
+    }
+    100% {
+        opacity: 0; /* Fully invisible */
+    }
+}
+
+/* Keyframes for movement */
+@keyframes fallToEarth {
+    from {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    to {
+        opacity: 1;
+        transform : translateY(0px);
+    }
+}

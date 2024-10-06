@@ -10,7 +10,7 @@ import cfc2 from './styles/assets/cfc2.png';
 
 import uv from './styles/assets/uv.png';
 
-import './styles/ozone.css';
+import './styles/DecreaseOzone.css';
 
 const DecreaseOzone = ({ onChoice }) => {
     const [showOzone, setShowOzone] = useState(true); // State to toggle between small and big algae

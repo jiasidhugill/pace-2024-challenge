@@ -13,7 +13,7 @@ const App = () => {
     };
 
     const handleStartingScreenChange = () => {
-        setCurrentScene('DecreaseOzone');  // Change to Increase Phytoplankton scene
+        setCurrentScene('IncreaseOzone');
     };
 
     return (

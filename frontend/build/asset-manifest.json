@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f4cc6df.css",
+    "main.js": "/static/js/main.b9836c91.js",
+    "static/js/488.261d7ab8.chunk.js": "/static/js/488.261d7ab8.chunk.js",
+    "static/media/home_screen.gif": "/static/media/home_screen.78a58481a9cf901d5e0a.gif",
+    "static/media/ocean_color_map_Indo_Pacific.png": "/static/media/ocean_color_map_Indo_Pacific.b44ad753cfe00dac07bc.png",
+    "static/media/ocean_color_map_Brazil.png": "/static/media/ocean_color_map_Brazil.6f9350e39bf50361a769.png",
+    "static/media/ocean_bg.png": "/static/media/ocean_bg.57433277a7626ec04c1a.png",
+    "static/media/africa close.png": "/static/media/africa close.a09227f0c2006e5df303.png",
+    "static/media/china close.png": "/static/media/china close.ebacb5c2d98342a326d8.png",
+    "static/media/pace_logo.png": "/static/media/pace_logo.681234d419ac5aac514a.png",
+    "static/media/china far.png": "/static/media/china far.f69a461d343fd97820a0.png",
+    "static/media/africa far .png": "/static/media/africa far .6eee51519ac2f6bef670.png",
+    "static/media/cfc1.png": "/static/media/cfc1.5c184a0954dfd7b0a0cb.png",
+    "static/media/cfc2.png": "/static/media/cfc2.ec352ff224e03801c338.png",
+    "static/media/algeo_big_boi.png": "/static/media/algeo_big_boi.cd07782d7f0d9ad47f2c.png",
+    "static/media/uv.png": "/static/media/uv.37309061f15dd8a76c7f.png",
+    "static/media/algae_smol.png": "/static/media/algae_smol.c8b1da5f2bccdb52db32.png",
+    "static/media/ozone3.png": "/static/media/ozone3.34db5db38b05158e09dc.png",
+    "static/media/ozone1.png": "/static/media/ozone1.d75551efe37108eb6a4a.png",
+    "static/media/scientist-1.png": "/static/media/scientist-1.efbd912d984aaf644034.png",
+    "static/media/ozone4.png": "/static/media/ozone4.b3acc309b7b1a632287a.png",
+    "static/media/ozone2.png": "/static/media/ozone2.472e06777dbad3e78a88.png",
+    "static/media/Starting Menu.png": "/static/media/Starting Menu.48eec7b1c4c226361f20.png",
+    "static/media/atm_bg.png": "/static/media/atm_bg.9451578db324ac7542ea.png",
+    "index.html": "/index.html",
+    "main.1f4cc6df.css.map": "/static/css/main.1f4cc6df.css.map",
+    "main.b9836c91.js.map": "/static/js/main.b9836c91.js.map",
+    "488.261d7ab8.chunk.js.map": "/static/js/488.261d7ab8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f4cc6df.css",
+    "static/js/main.b9836c91.js"
+  ]
+}
